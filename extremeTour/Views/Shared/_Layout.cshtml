@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title>@ViewBag.Title</title>
+	@Styles.Render("~/Content/css")
+	@Styles.Render("~/Content/less")
+
+	<!--[if lt IE 9]>
+		<script src="~/Scripts/thirdPartyLibs/html5shiv.js"></script>
+		<script src="~/Scripts/thirdPartyLibs/respond.min.js"></script>
+	<![endif]-->
+	<link rel="shortcut icon" type="img/png" href="~/Content/images/ico/favicon.png"> @*TODO*@
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+
+</head>
+<body>
+	@RenderBody()
+
+	@Scripts.Render("~/bundles/jquery")
+	@Scripts.Render("~/bundles/bootstrap")
+	@Scripts.Render("~/bundles/backboneWithDependencies")
+	<script>
+		(function defaults() {
+			// Lodash template interpolation settings
+			_.templateSettings = {
+				evaluate: /\{\{([\s\S]+?)\}\}/g,
+				interpolate: /\{\{=([\s\S]+?)\}\}/g,
+				escape: /\{\{-([\s\S]+?)\}\}/g
+			};
+		})();
+	</script>
+	@Scripts.Render("~/bundles/thirdPartyLibraries")
+	@Scripts.Render("~/bundles/app")
+
+	@RenderSection("scripts", required: false)
+</body>
+</html>

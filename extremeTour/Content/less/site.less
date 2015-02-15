@@ -1,0 +1,282 @@
+﻿@import url(http://fonts.googleapis.com/css?family=Dosis:400,200,300,500,600,700,800);
+@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300,200,700);
+@import "variables.less";
+@import "basic.less";
+@import "responsive.less";
+
+/******************************
+			Header
+******************************/
+
+.header-top {
+	display: block;
+	overflow: hidden;
+	padding: 25px;
+}
+
+.main-nav {
+	position: absolute;
+	width: 100%;
+	z-index: 999;
+
+	.container {
+		width: 100%;
+	}
+
+	.navbar-header {
+		position: relative;
+	}
+
+	.main-title {
+		font-family: 'Dosis';
+		position: absolute;
+		line-height: 1em;
+		cursor: pointer;
+		color: #fff;
+	}
+
+	&.fixed-menu .main-title {
+		margin: 7px 0 0 105px;
+		font-size: 1em;
+
+		.title-bigger {
+			font-size: 1.5em;
+		}
+	}
+}
+
+
+.social-icons {
+
+	.icon-circle {
+		display: inline-block;
+		width: 24px;
+		height: 24px;
+		background-color: #fff;
+		text-align: center;
+		border-radius: 12px;
+		margin: 0 5px;
+		cursor: pointer;
+		opacity: .5;
+
+		&:hover {
+			opacity: .9;
+			-moz-transition-duration: .5s;
+			-o-transition-duration: .5s;
+			-webkit-transition-duration: .5s;
+			transition-duration: .5s;
+		}
+
+		a {
+			font-size: 12px;
+			color: #d9d9d9;
+		}
+
+		&:hover .fa-facebook {
+			color: #3B5997;
+		}
+
+		&:hover .fa-twitter {
+			color: #29C5F6;
+		}
+
+		&:hover .fa-vk {
+			color: #6281a3;
+		}
+
+	}
+}
+
+.navbar-right {
+	background-color: @navbar-bg-color;
+	padding: 0 95px 0 0;
+	opacity: .9;
+
+	li a {
+		/*padding: @navbar-a-vertical-padding 21px;*/
+		font-size: 20px;
+		color: #fff;
+		text-transform: uppercase;
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		font-weight: 300;
+	}
+
+	li a:hover,
+	li a:focus,
+	.active a {
+		background-color: #fff;
+		color: @navbar-active-a-color;
+	}
+}
+
+.navbar-brand {
+	background-color: @navbar-bg-color;
+	margin-bottom: 20px;
+	position: relative;
+	cursor: pointer;
+
+	img {
+		height: 80px;
+		top: -20px;
+		position: absolute;
+	}
+}
+
+.fixed-menu {
+	background-color: @navbar-bg-color;
+	position: fixed;
+	top: 0;
+
+	.header-top {
+		display: none;
+	}
+
+	.navbar-right {
+		padding: 0;
+
+		li a {
+			font-size: 18px;
+			text-shadow: inherit;
+		}
+	}
+
+	.navbar-brand {
+		margin: 0 0 0 20px;
+		padding: 0;
+		width: 120px;
+
+		img {
+			height: 50px;
+			top: 0;
+		}
+	}
+}
+
+/*************************
+*******Home LESS******
+**************************/
+
+#home {
+	position: relative;
+	overflow: hidden;
+
+	#main-slider {
+
+		img {
+			width: 100%;
+		}
+
+		.carousel-caption {
+			background: none repeat scroll 0 0 #000000;
+			bottom: 14%;
+			float: left;
+			left: 0;
+			opacity: 0.8;
+			padding: 10px 60px 35px;
+			right: inherit;
+			text-transform: uppercase;
+			color: #fff;
+			text-align: left;
+
+			h2 {
+				font-size: 38px;
+			}
+
+			h4 {
+				font-size: 24px;
+			}
+
+			a {
+				font-size: 22px;
+				color: #2da1c5;
+			}
+
+			a:hover {
+				color: #2588a6;
+			}
+
+			a:hover i {
+				margin-left: 35px;
+			}
+
+			a i {
+				margin-left: 15px;
+				-webkit-transition: all 0.3s ease-in-out;
+				-moz-transition: all 0.3s ease-in-out;
+				-o-transition: all 0.3s ease-in-out;
+				transition: all 0.3s ease-in-out;
+			}
+		}
+
+		.carousel-indicators li {
+			background-color: @navbar-bg-color;
+			border: 1px solid @navbar-bg-color;
+		}
+
+		.carousel-indicators li.active {
+			background-color: #fff;
+			border: 1px solid #fff;
+		}
+	}
+
+	#mainDescription {
+		margin: 20px auto;
+
+		.description-body {
+			padding: 20px 0;
+
+			.title {
+				text-align: center;
+			}
+
+			.paragraph {
+				padding: 10px 0;
+			}
+		}
+	}
+}
+
+/*************************
+******Map CSS****
+**************************/
+#map {
+	position: relative;
+}
+
+#gmap {
+	height: 450px;
+}
+
+#footer {
+	margin-top: 20px;
+	height: @footer-height;
+	background-color: @navbar-bg-color;
+	opacity: .9;
+
+
+	.content {
+		-moz-box-shadow: inset 0 13px 26px -11px #252525;
+		-webkit-box-shadow: inset 0 13px 26px -11px #252525;
+		box-shadow: inset 0 13px 26px -11px #252525;
+		position: absolute;
+		left: 0;
+		width: 100%;
+		height: @footer-height;
+		text-align: center;
+
+		.copyrights {
+			display: inline-block;
+			color: #fff;
+			margin-top: 20px;
+			font-size: 14px;
+
+			a {
+				color: #fff;
+
+				&:hover {
+					color: #d9d9d9;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,278 @@
+﻿@import "variables";
+
+/*main Description*/
+@media (max-width: 991px) {
+	#mainDescription {
+		padding: 10px;
+	}
+}
+
+@media (min-width: 990px) {
+	#mainDescription {
+		padding: 10px 80px;
+	}
+}
+
+/* extra */
+@media (min-width: 1400px) {
+	.navbar-brand {
+		width: @navbar-brand-width+20px;
+		height: @navbar-brand-height+20px;
+	}
+
+	.navbar-right {
+		padding: 0 30px 0 0;
+
+		li a {
+			padding: @navbar-a-vertical-padding+10px 25px;
+		}
+	}
+
+	.fixed-menu {
+		padding-right: 30px;
+
+		.container {
+			width: 100%;
+		}
+
+		.navbar-right {
+			li a {
+				padding: @fixed-menu-navbar-right-a-padding;
+			}
+		}
+	}
+
+	.main-nav .main-title {
+		margin: 11px 10px 0 150px;
+		font-size: @main-title-font-size;
+
+		.title-bigger {
+			margin-left: -1px;
+			font-size: @main-title-bigger-font-size;
+		}
+	}
+}
+
+/* lg */
+@media (min-width: 1200px) and (max-width: 1399px) {
+	.navbar-brand {
+		width: @navbar-brand-width+20px;
+		height: @navbar-brand-height;
+	}
+
+	.navbar-right {
+		padding: 0 30px 0 0;
+
+		li a {
+			padding: @navbar-a-vertical-padding 15px;
+		}
+	}
+
+	.fixed-menu {
+		padding-right: 30px;
+
+		.container {
+			width: 100%;
+		}
+
+		.navbar-right {
+			li a {
+				padding: @fixed-menu-navbar-right-a-padding;
+			}
+		}
+	}
+
+	.main-nav .main-title {
+		margin: 0 10px 0 150px;
+		font-size: @main-title-font-size;
+
+		.title-bigger {
+			margin-left: -1px;
+			font-size: @main-title-bigger-font-size;
+		}
+	}
+}
+
+/* md */
+@media (min-width: 992px) and (max-width: 1199px) {
+	.navbar-brand {
+		width: @navbar-brand-width;
+		height: @navbar-brand-height;
+	}
+
+	.navbar-right {
+		padding: 0 30px 0 0;
+
+		li a {
+			padding: @navbar-a-vertical-padding 15px;
+		}
+	}
+
+	.fixed-menu {
+		padding-right: 30px;
+
+		.container {
+			width: 100%;
+		}
+
+		.navbar-right {
+			li a {
+				padding: @fixed-menu-navbar-right-a-padding;
+			}
+		}
+	}
+
+	.main-nav .main-title {
+		margin: 0 10px 0 140px;
+		font-size: @main-title-font-size;
+
+		.title-bigger {
+			margin-left: -1px;
+			font-size: @main-title-bigger-font-size;
+		}
+	}
+}
+
+/* sm */
+@media (min-width: 768px) and (max-width: 991px) {
+
+	.navbar-brand {
+		width: @navbar-brand-width;
+		height: @navbar-brand-height;
+	}
+
+	.navbar-right {
+		padding: 0;
+
+		li a {
+			padding: @navbar-a-vertical-padding - 5px 11px;
+			font-size: 17px;
+		}
+	}
+
+	.fixed-menu .container {
+		width: 100%;
+	}
+
+	.fixed-menu .navbar-right {
+		li a {
+			padding: @fixed-menu-navbar-right-a-padding 15px;
+			font-size: 17px;
+		}
+	}
+
+	.main-nav .main-title {
+		margin: 0 10px 0 140px;
+		font-size: @main-title-font-size;
+
+		.title-bigger {
+			margin-left: -1px;
+			font-size: @main-title-bigger-font-size;
+		}
+	}
+}
+
+/* xs */
+@media (max-width: 767px) {
+
+	.main-nav .container {
+		display: none;
+	}
+
+	.fixed-menu .container {
+		display: block;
+		width: 100%;
+	}
+
+	.navbar-brand {
+		width: inherit;
+	}
+
+	.fixed-menu .navbar-right li a {
+		padding: @fixed-menu-navbar-right-a-padding - 3px 25px;
+	}
+
+	#home {
+		margin-top: @home-margin-top;
+	}
+
+	#main-slider .carousel-caption {
+		bottom: 17%;
+		padding: 10px;
+		line-height: 0;
+
+		h2 {
+			font-size: 20px;
+			margin-top: 3px;
+		}
+
+		h4 {
+			font-size: 16px;
+		}
+
+		a {
+			font-size: 14px;
+			color: #2da1c5;
+		}
+	}
+
+	.main-nav .main-title {
+		display: none;
+	}
+}
+
+/* XS Portrait */
+@media (max-width: 479px) {
+	.main-nav .container {
+		display: none;
+	}
+
+	.fixed-menu {
+		-moz-box-shadow: 0 -1px 12px 3px @shadow-color;
+		-webkit-box-shadow: 0 -1px 12px 3px @shadow-color;
+		box-shadow: 0 -1px 12px 3px @shadow-color;
+
+		.container {
+			display: block;
+			width: 100%;
+		}
+
+		.navbar-right li a {
+			padding: @fixed-menu-navbar-right-a-padding + 3px 25px;
+		}
+	}
+
+	/* Home */
+
+	#home {
+		margin-top: @home-margin-top;
+	}
+
+	.navbar-brand {
+		width: inherit;
+	}
+
+	#main-slider .carousel-caption {
+		bottom: 17%;
+		padding: 10px;
+		line-height: 0;
+
+		h2 {
+			font-size: 18px;
+			margin-top: 3px;
+		}
+
+		h4 {
+			font-size: 14px;
+		}
+
+		a {
+			font-size: 12px;
+			color: #2da1c5;
+		}
+	}
+
+	.carousel-indicators {
+		bottom: 0;
+	}
+}

@@ -1,0 +1,174 @@
+﻿@{
+	ViewBag.Title = "Nord Extreme";
+}
+
+<header id="header" role="banner"></header>
+<!--/#header-->
+
+<div id="body"></div>
+
+<footer id="footer">
+	<div class="content">
+		<div class="copyrights">
+			<span>© 2014 Норд Экстрим Тур</span> @*// TODO add method to get current year*@
+			<br />
+			<span>(8152) 70 14 98; +7 911 300 14 98</span>
+			<br />
+			<span>e-mail: <a href="mailto:pavel_novikov@epam.com" target="_top">pavel_novikov@epam.com</a> </span>
+		</div>
+	</div>
+</footer>
+
+@*//templates: // todo - move it to different files *@
+
+<script type="text/html" id="headerTemplate">
+	<div class="main-nav">
+		<div class="container">
+			<div class="header-top">
+				<div class="pull-right social-icons">
+					<div class="icon-circle twitter" title="Share to Twitter">
+						<a href="#"><i class="fa fa-twitter"></i></a>
+					</div>
+					<div class="icon-circle facebook" title="Share to Facebook">
+						<a href="#"><i class="fa fa-facebook"></i></a>
+					</div>
+					<div class="icon-circle vk" title="Share to VK">
+						<a href="#"><i class="fa fa-vk"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<div class="navbar-brand">
+						<img class="img-responsive" src="Content/images/logo.png" alt="logo">
+					</div>
+					<div class="main-title">
+						<span class="title-bigger">Nord</span>
+						<br />
+						<span>Extreme</span>
+					</div>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-right">
+						@*// TODO add list *@
+						<li class="scroll main {{ if (app.applicationModel.get('state') === app.states.start) { print('active'); } }}"><a href="/">Главная</a></li>
+						<li class="scroll gallery {{ if (app.applicationModel.get('state') === app.states.gallery) { print('active'); } }}"><a href="#gallery">Фотогалерея</a></li>
+						<li class="scroll responses {{ if (app.applicationModel.get('state') === app.states.responses) { print('active'); } }}"><a href="#responses">Отзывы</a></li>
+						<li class="scroll contacts {{ if (app.applicationModel.get('state') === app.states.contacts) { print('active'); } }}"><a href="#contact">Контакты</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</script>
+
+<script type="text/html" id="homeTemplate">
+	<section id="home">
+		<div id="main-slider" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#main-slider" data-slide-to="0" class="active"></li>
+				<li data-target="#main-slider" data-slide-to="1"></li>
+				<li data-target="#main-slider" data-slide-to="2"></li>
+			</ol>
+			<div class="carousel-inner">
+				<div class="item active">
+					<img class="img-responsive" src="Content/images/slider/bg1.jpg" alt="slider">
+					@*<div class="carousel-caption">
+							<h2>register for our next event </h2>
+							<h4>full event package only $199</h4>
+							<a href="#contact">GRAB YOUR TICKETS <i class="fa fa-angle-right"></i></a>
+						</div>*@
+				</div>
+				<div class="item">
+					<img class="img-responsive" src="Content/images/slider/bg2.jpg" alt="slider">
+				</div>
+				<div class="item">
+					<img class="img-responsive" src="Content/images/slider/bg3.jpg" alt="slider">
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid" id="mainDescription">
+			<div class="all-pages main-title with-low-border">
+				Норд Экстрим Тур - оператор по активному и экстремальному туризму на Кольском севере...
+			</div>
+			<div class="description-body">
+				<div class="title">Мы знаем все о <strong>туризме на Кольском полуострове</strong>!</div>
+				<div class="paragraph">
+					Наши туры по Кольскому полуострову для тех, кто предпочитает путешествия привычному комфорту, кого манит ветер странствий, а жажда новых приключений и открытий постоянно уводит от домашнего очага, для кого быть в пути - это не потерянное время, а состояние души…
+				</div>
+				<div class="paragraph">
+					<strong>Отдых на Кольском</strong> не оставит никого равнодушным. Побродив по нашим сопкам и горам, пройдя порожистые реки, побывав в открытом море, познакомившись с культурой и бытом коренных народов <strong>Мурманской области</strong>, вы будете хотеть вернуться сюда снова и снова…
+				</div>
+			</div>
+
+			<div class="row">
+				{{ _.each(imgCollection, function(img) {  }}
+				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 image-preview-block">
+					<img class="img-responsive img-rounded"
+						 src="{{= img.src }}"
+						 alt="{{= img.alt }}"
+						 title="{{= img.title }}" />
+					<span class="img-description">{{= img.description }}</span>
+				</div>
+				{{ }); }}
+			</div>
+
+		</div>
+
+	</section>
+	<!--/#home-->
+</script>
+
+<script type="text/html" id="galleryTemplate">
+	<div class="margin-top-body">
+		<div class="container-fluid">
+			<div class="all-pages main-title with-low-border">
+				Фотогалерея
+			</div>
+			<div class="row mg-top-20">
+				{{ _.each(imgCollection, function(img) {  }}
+				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 image-preview-block">
+					<img class="img-responsive img-rounded"
+						 src="{{= img.src }}"
+						 alt="{{= img.alt }}"
+						 title="{{= img.title }}" />
+					<span class="img-description">{{= img.description }}</span>
+				</div>
+				{{ }); }}
+			</div>
+		</div>
+	</div>
+</script>
+
+<script type="text/html" id="responsesTemplate">
+	<div class="margin-top-body">
+		<div class="container-fluid">
+			<div class="all-pages main-title with-low-border">
+				Отзывы
+			</div>
+			<div class="row mg-top-20">
+
+			</div>
+		</div>
+	</div>
+</script>
+
+<script type="text/html" id="contactsTemplate">
+	<div class="margin-top-body">
+		<div class="container-fluid">
+			<div class="all-pages main-title with-low-border">
+				Контакты
+			</div>
+			<div class="row mg-top-20">
+
+			</div>
+		</div>
+	</div>
+</script>
