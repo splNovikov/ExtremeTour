@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using extremeTour.Utils;
+using System.Web;
 using System.Web.Optimization;
 
 namespace extremeTour
@@ -8,29 +9,27 @@ namespace extremeTour
 
 		public static void RegisterBundles(BundleCollection bundles)
 		{
-			bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+			BundleTable.EnableOptimizations = false;
+
+			bundles.Add(new JsBundle("~/bundles/jquery").Include(
 						"~/Scripts/jquery-{version}.js"));
 
-			bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-						"~/Scripts/jquery.unobtrusive*",
-						"~/Scripts/jquery.validate*"));
-
-			bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+			bundles.Add(new JsBundle("~/bundles/bootstrap").Include(
 						"~/Scripts/bootstrap.js"));
 
-			bundles.Add(new ScriptBundle("~/bundles/thirdPartyLibraries").Include(
+			bundles.Add(new JsBundle("~/bundles/thirdPartyLibraries").Include(
 						"~/Scripts/thirdPartyLibs/smoothscroll.js",
 						"~/Scripts/jquery.parallax.js",
 						"~/Scripts/jquery.scrollTo.js",
 						"~/Scripts/jquery.nav.js"
 						));
 
-			bundles.Add(new ScriptBundle("~/bundles/backboneWithDependencies").Include(
+			bundles.Add(new JsBundle("~/bundles/backboneWithDependencies").Include(
 				"~/Scripts/lodash.underscore.js",
 				"~/Scripts/backbone.js"
 				));
 
-			bundles.Add(new ScriptBundle("~/bundles/app").Include(
+			bundles.Add(new JsBundle("~/bundles/app").Include(
 						"~/Scripts/app/models/applicationModel.js",
 
 						"~/Scripts/app/models/imageModel.js",
@@ -45,7 +44,7 @@ namespace extremeTour
 						"~/Scripts/app/router/router.js",
 						"~/Scripts/app/app.js"));
 
-			bundles.Add(new StyleBundle("~/Content/less").Include(
+			bundles.Add(new LessBundle("~/Content/less").Include(
 						"~/Content/less/site.less"
 				));
 
